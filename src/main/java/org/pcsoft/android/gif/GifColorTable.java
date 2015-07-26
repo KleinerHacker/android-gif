@@ -3,7 +3,7 @@ package org.pcsoft.android.gif;
 /**
  * Created by Christoph on 26.07.2015.
  */
-public final class GifColorTable {
+public class GifColorTable {
     private final int[] colors;
 
     GifColorTable(int[] colors) {
@@ -15,6 +15,6 @@ public final class GifColorTable {
     }
 
     public final GifColorTable copy() {
-        return new GifColorTable(colors);
+        return new GifColorTable(colors.clone());
     }
 }

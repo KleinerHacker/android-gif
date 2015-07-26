@@ -8,8 +8,9 @@ public final class GifMetadata {
     private final int delay;
     private final boolean transparency;
     private final int transparentColor;
+    private final int dispose;
 
-    GifMetadata(int top, int left, int width, int height, int delay, boolean transparency, int transparentColor) {
+    GifMetadata(int left, int top, int width, int height, int delay, boolean transparency, int transparentColor, int dispose) {
         this.top = top;
         this.left = left;
         this.width = width;
@@ -17,6 +18,7 @@ public final class GifMetadata {
         this.delay = delay;
         this.transparency = transparency;
         this.transparentColor = transparentColor;
+        this.dispose = dispose;
     }
 
     public int getTop() {
@@ -45,5 +47,9 @@ public final class GifMetadata {
 
     public int getTransparentColor() {
         return transparentColor;
+    }
+
+    int getDispose() {
+        return dispose;
     }
 }
