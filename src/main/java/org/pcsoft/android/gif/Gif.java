@@ -1,5 +1,7 @@
 package org.pcsoft.android.gif;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,25 @@ import java.util.List;
  */
 public final class Gif {
     public static final int LOOP_ENDLESS = -1;
+
+    public static Gif createScaledGif(Gif source, int dstWidth, int dstHeight, boolean filter) {
+        final Gif gif = new Gif(dstWidth, dstHeight, source.getLoopCount(), source.getPixelAspectRatio(), source.getGlobalColorTable());
+        for (final GifFrame frame : source.getFrameList()) {
+            gif.getFrameList().add(new GifFrame(
+                    new GifMetadata(
+                            dstWidth * frame.getMetadata().getLeft() / frame.getMetadata().getWidth(),
+                            dstHeight * frame.getMetadata().getTop() / frame.getMetadata().getHeight(),
+                            dstWidth, dstHeight, frame.getMetadata().getDelay(),
+                            frame.getMetadata().isTransparency(), frame.getMetadata().getTransparentColor(),
+                            frame.getMetadata().getDispose()
+                    ),
+                    frame.getColorTable().copy(),
+                    Bitmap.createScaledBitmap(frame.getImage(), dstWidth, dstHeight, filter)
+            ));
+        }
+
+        return gif;
+    }
 
     private final int width, height;
     private final int loopCount;
