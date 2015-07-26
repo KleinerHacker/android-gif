@@ -1,0 +1,5 @@
+.idea
+**/target/
+*.iml
+AndroidManifest-merged.xml
+gen-external-apklibs
