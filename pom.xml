@@ -4,49 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
     <name>AndroCrypt</name>
     <groupId>org.pcsoft.android</groupId>
-    <artifactId>andro-gif</artifactId>
+    <artifactId>android-gif</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>aar</packaging>
 
     <build>
         <plugins>
-            <plugin>
-                    <groupId>com.simpligility.maven.plugins</groupId>
-                    <artifactId>android-maven-plugin</artifactId>
-                    <version>4.0.1-SNAPSHOT-RC</version>
-                    <configuration>
-                        <androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
-                        <assetsDirectory>${project.basedir}/assets</assetsDirectory>
-                        <resourceDirectory>${project.basedir}/res</resourceDirectory>
-                        <genDirectory>${project.build.directory}/generated-sources/r</genDirectory>
-                        <genDirectoryAidl>${project.build.directory}/generated-sources/aidl</genDirectoryAidl>
-                        <failOnDuplicatePackages>false</failOnDuplicatePackages>
-                        <sdk>
-                            <platform>19</platform>
-                            <path>F:\android-sdk-windows</path>
-                        </sdk>
-                        <failOnNonStandardStructure>false</failOnNonStandardStructure>
-                        <androidManifestFile>${project.basedir}/AndroidManifest.xml</androidManifestFile>
-                        <resourceDirectory>${project.basedir}/res</resourceDirectory>
-                        <aaptVerbose>true</aaptVerbose>
-						<undeployBeforeDeploy>false</undeployBeforeDeploy>
-						<emulator>MyAndroid</emulator>
-						<device>usb</device>
-						<dexOptimize>true</dexOptimize>
-						<dexIncremental>true</dexIncremental>
-						<dex>
-							<jvmArguments>
-								<jvmArgument>-Xms2048m</jvmArgument>
-								<jvmArgument>-Xmx2048m</jvmArgument>
-							</jvmArguments>
-							<useDirectory>true</useDirectory>
-						</dex>
-						<mergeManifests>false</mergeManifests>
-						<manifestVersionName>${project.version}</manifestVersionName>
-                    </configuration>
-                    <extensions>true</extensions>
-                </plugin>
-
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>

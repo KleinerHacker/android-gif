@@ -23,7 +23,8 @@ final class GifDecoder {
         final GifHeader header = readHeader(in);
         final GifContent content = readContent(header, in);
 
-        final Gif gif = new Gif(header.getWidth(), header.getHeight(), -1, header.getPixelAspectRatio(), header.getColorTable());
+        //TODO: Loop from Application Extension
+        final Gif gif = new Gif(header.getWidth(), header.getHeight(), 0, header.getPixelAspectRatio(), header.getColorTable());
         gif.getFrameList().addAll(content.getFrameList());
 
         return gif;
