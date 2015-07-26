@@ -1,7 +1,7 @@
 package org.pcsoft.android.gif;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Represent the GIF metadata for each single GIF frame, see {@link GifFrame}
  */
 public final class GifMetadata {
     private final int top, left, width, height;
@@ -21,34 +21,66 @@ public final class GifMetadata {
         this.dispose = dispose;
     }
 
+    /**
+     * Top position
+     * @return
+     */
     public int getTop() {
         return top;
     }
 
+    /**
+     * Left position
+     * @return
+     */
     public int getLeft() {
         return left;
     }
 
+    /**
+     * Image width
+     * @return
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * Image height
+     * @return
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * Delay for this single image
+     * @return
+     */
     public int getDelay() {
         return delay;
     }
 
+    /**
+     * Transparency flag
+     * @return
+     */
     public boolean isTransparency() {
         return transparency;
     }
 
+    /**
+     * Transparent color, if {@link #isTransparency()} is TRUE
+     * @return
+     */
     public int getTransparentColor() {
         return transparentColor;
     }
 
+    /**
+     * Dispose value. Only for internal use.
+     * @return
+     */
     int getDispose() {
         return dispose;
     }

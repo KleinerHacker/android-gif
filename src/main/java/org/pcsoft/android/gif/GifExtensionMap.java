@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Represent the extension map. Only for internal use
  */
 final class GifExtensionMap {
 

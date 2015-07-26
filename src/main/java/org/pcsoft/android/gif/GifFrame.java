@@ -3,7 +3,7 @@ package org.pcsoft.android.gif;
 import android.graphics.Bitmap;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Represent a dingle GIF frame
  */
 public final class GifFrame {
     private final GifMetadata metadata;
@@ -16,14 +16,26 @@ public final class GifFrame {
         this.image = image;
     }
 
+    /**
+     * Returns the metadata for this frame
+     * @return
+     */
     public GifMetadata getMetadata() {
         return metadata;
     }
 
+    /**
+     * Returns the color table for this frame, or null, if global is to use
+     * @return
+     */
     public GifColorTable getColorTable() {
         return colorTable;
     }
 
+    /**
+     * Returns the decoded bitmap for this frame
+     * @return
+     */
     public Bitmap getImage() {
         return image;
     }

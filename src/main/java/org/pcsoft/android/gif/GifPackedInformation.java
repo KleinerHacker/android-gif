@@ -1,5 +1,8 @@
 package org.pcsoft.android.gif;
 
+/**
+ * Packed Information. Only for internal use.
+ */
 final class GifPackedInformation {
     private boolean useColorTable;
     private int colorTableSize;

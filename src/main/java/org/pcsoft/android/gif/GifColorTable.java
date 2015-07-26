@@ -1,7 +1,7 @@
 package org.pcsoft.android.gif;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Represent a GIF color table with up to 256 color values
  */
 public class GifColorTable {
     private final int[] colors;
@@ -10,6 +10,10 @@ public class GifColorTable {
         this.colors = colors;
     }
 
+    /**
+     * Returns all colors (up to 256) for this color table
+     * @return
+     */
     public int[] getColors() {
         return colors;
     }

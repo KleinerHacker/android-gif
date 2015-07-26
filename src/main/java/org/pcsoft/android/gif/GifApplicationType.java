@@ -1,9 +1,12 @@
 package org.pcsoft.android.gif;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Contains all GIF Application Types. Only for internal use
  */
-public enum GifApplicationType {
+enum GifApplicationType {
+    /**
+     * Netscape 2.0
+     */
     Netscape_2_0("NETSCAPE2.0"),
     Other(null);
 

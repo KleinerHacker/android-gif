@@ -6,11 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Represent the immutable GIF image. GIF images can only loaded, not saved!
  */
 public final class Gif {
+    /**
+     * Endless loop constant
+     */
     public static final int LOOP_ENDLESS = -1;
 
+    /**
+     * Scale the given source gif to the given bounds and use an optional filter
+     * @param source Source GIF to scale
+     * @param dstWidth Destination Width
+     * @param dstHeight Destination Height
+     * @param filter TRUE to aktivate the filter
+     * @return The immutable scaled GIF
+     */
     public static Gif createScaledGif(Gif source, int dstWidth, int dstHeight, boolean filter) {
         final Gif gif = new Gif(dstWidth, dstHeight, source.getLoopCount(), source.getPixelAspectRatio(), source.getGlobalColorTable());
         for (final GifFrame frame : source.getFrameList()) {
@@ -44,14 +55,26 @@ public final class Gif {
         this.globalColorTable = globalColorTable;
     }
 
+    /**
+     * Width of the GIF
+     * @return
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     * Height of the GIF
+     * @return
+     */
     public int getHeight() {
         return height;
     }
 
+    /**
+     * Count of Loops or endless, see {@link #LOOP_ENDLESS}
+     * @return
+     */
     public int getLoopCount() {
         return loopCount;
     }
@@ -60,14 +83,26 @@ public final class Gif {
         return frameList;
     }
 
+    /**
+     * The list of all frames in this GIF
+     * @return
+     */
     public GifFrame[] getFrames() {
         return frameList.toArray(new GifFrame[frameList.size()]);
     }
 
+    /**
+     * Returns the global color table
+     * @return
+     */
     public GifColorTable getGlobalColorTable() {
         return globalColorTable;
     }
 
+    /**
+     * Returns the pixel aspect ratio factor
+     * @return
+     */
     public int getPixelAspectRatio() {
         return pixelAspectRatio;
     }

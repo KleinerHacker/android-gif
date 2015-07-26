@@ -1,5 +1,6 @@
 package org.pcsoft.android.gif;
 
+import android.content.Context;
 import android.content.res.Resources;
 import org.apache.commons.lang3.StringUtils;
 
@@ -10,10 +11,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Represent the factory to create a GIF from different input variants
  */
 public final class GifFactory {
 
+    /**
+     * Decode GIF from byte array
+     * @param bytes bytes to read
+     * @param offset offset to start reading in buffer
+     * @param length length to read in buffer
+     * @return GIF
+     */
     public static Gif decodeByteArray(byte[] bytes, int offset, int length) {
         try {
             return GifDecoder.decode(new ByteArrayInputStream(bytes, 0, length));
@@ -22,6 +30,11 @@ public final class GifFactory {
         }
     }
 
+    /**
+     * Decode GIF from file
+     * @param pathname GIF file name
+     * @return GIF
+     */
     public static Gif decodeFile(String pathname) {
         try {
             return GifDecoder.decode(new FileInputStream(pathname));
@@ -30,10 +43,25 @@ public final class GifFactory {
         }
     }
 
-    public static Gif decodeFileDescriptor(FileDescriptor fileDescriptor) {
-        return null;
+    /**
+     * Decode GIF from file descriptor
+     * @param fileDescriptor
+     * @return GIF
+     */
+    public static Gif decodeFileDescriptor(Context context, FileDescriptor fileDescriptor) {
+        try {
+            return GifDecoder.decode(new FileInputStream(fileDescriptor));
+        } catch (IOException e) {
+            throw new IllegalArgumentException("Unable to decode from file descriptor!", e);
+        }
     }
 
+    /**
+     * Decode GIF from raw-resource
+     * @param resources Resources
+     * @param id ID of raw-resource to decode
+     * @return GIF
+     */
     public static Gif decodeResource(Resources resources, int id) {
         try {
             return GifDecoder.decode(resources.openRawResource(id));
@@ -42,6 +70,11 @@ public final class GifFactory {
         }
     }
 
+    /**
+     * Decode GIF from stream
+     * @param is Stream with GIF bytes
+     * @return GIF
+     */
     public static Gif decodeStream(InputStream is) {
         try {
             return GifDecoder.decode(is);

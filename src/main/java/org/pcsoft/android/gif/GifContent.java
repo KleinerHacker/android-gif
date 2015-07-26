@@ -9,6 +9,10 @@ import java.util.List;
 final class GifContent {
     private final List<GifFrame> frameList = new ArrayList<GifFrame>();
 
+    /**
+     * Returns all GIF frames
+     * @return
+     */
     public List<GifFrame> getFrameList() {
         return frameList;
     }

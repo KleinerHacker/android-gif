@@ -1,15 +1,32 @@
 package org.pcsoft.android.gif;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Extension Types. Only for internal use
  */
 enum GifExtensionType {
+    /**
+     * Application (loop count)
+     */
     Application((byte) 0xff),
+    /**
+     * Graphic Control (transparency)
+     */
     GraphicControl((byte) 0xf9),
+    /**
+     * Comment (not supported yet)
+     */
     Comment((byte) 0xfe),
+    /**
+     * Plain Text (not supported yet)
+     */
     PlainText((byte) 0x01),
     Other(null);
 
+    /**
+     * Creates from given code
+     * @param code
+     * @return
+     */
     public static GifExtensionType fromCode(byte code) {
         for (final GifExtensionType type : values()) {
             if (type.getCode() == null)

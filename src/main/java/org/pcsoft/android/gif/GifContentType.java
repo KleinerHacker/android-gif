@@ -1,11 +1,20 @@
 package org.pcsoft.android.gif;
 
 /**
- * Created by Christoph on 26.07.2015.
+ * Contains all content types. Only for internal use
  */
-public enum GifContentType {
+enum GifContentType {
+    /**
+     * Image section
+     */
     Image((byte)0x2C),
+    /**
+     * Extension section
+     */
     Extension((byte)0x21),
+    /**
+     * Terminator
+     */
     Terminator((byte)0x3b),
     Other(null);
 

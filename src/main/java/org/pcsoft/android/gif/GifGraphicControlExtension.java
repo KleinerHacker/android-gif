@@ -1,5 +1,8 @@
 package org.pcsoft.android.gif;
 
+/**
+ * Graphic Control Extension. Only for internal use.
+ */
 final class GifGraphicControlExtension extends GifExtension {
     private int dispose;
     private boolean transparency;
