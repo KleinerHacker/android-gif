@@ -83,6 +83,13 @@
             <artifactId>guava-jdk5</artifactId>
             <version>17.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.robolectric</groupId>
+            <artifactId>robolectric</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <distributionManagement>
