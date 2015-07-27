@@ -1,5 +1,5 @@
 # Android GIF Library
-The Android GIF Libraray (android-gif) add support for GIF files in Android like existing structure of Android Bitmap. This is the simplest way to use GIFs in Android:
+The Android GIF Libraray (android-gif) adds support for GIF files in Android like existing structure of Android Bitmap. This is the simplest way to use GIFs in Android:
 
 ## Examples
 
