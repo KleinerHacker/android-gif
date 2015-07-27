@@ -26,7 +26,7 @@ final Gif myScaledGif = Gif.createScaledGif(myGif, 200, 150, true);
 </code>
 </pre>
 
-### Show single image og GIF
+### Show single image of GIF
 
 <pre><code>
 final Gif myGif = GifFactory.decodeFile("test.gif");
