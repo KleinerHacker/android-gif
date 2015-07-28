@@ -31,4 +31,3 @@ final Drawable myDrawable = new BitmapDrawable(context.getResources(), myGif.get
 ## Known Bugs
 
 * Loop Count faulty: Only one loop or endless loop supported
-* Transparent Background Color not supported yet
