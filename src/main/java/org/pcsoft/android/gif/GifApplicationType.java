@@ -7,7 +7,7 @@ enum GifApplicationType {
     /**
      * Netscape 2.0
      */
-    Netscape_2_0("NETSCAPE2.0"),
+    Netscape20("NETSCAPE2.0"),
     Other(null);
 
     public static GifApplicationType fromName(String name) {

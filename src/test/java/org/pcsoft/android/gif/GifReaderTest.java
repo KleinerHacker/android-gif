@@ -12,7 +12,7 @@ import org.robolectric.RobolectricTestRunner;
 public class GifReaderTest {
 
     @Test
-    public void test() {
+    public void basicTest() {
         final Gif gif = GifFactory.decodeStream(Thread.currentThread().getContextClassLoader().getResourceAsStream("test.gif"));
 
         Assert.assertEquals(365, gif.getWidth());

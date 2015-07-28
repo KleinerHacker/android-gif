@@ -1,25 +1,18 @@
 package org.pcsoft.android.gif;
 
 /**
- * Application Extension. Only for internal use
+ * Application Extension (Base). Only for internal use
  */
-final class GifApplicationExtension extends GifExtension {
-    private int loopCount;
+abstract class GifApplicationExtension extends GifExtension {
 
     /**
-     * Loop Counter Value
+     * Type of application extension
      * @return
      */
-    public int getLoopCount() {
-        return loopCount;
-    }
-
-    public void setLoopCount(int loopCount) {
-        this.loopCount = loopCount;
-    }
+    public abstract GifApplicationType getApplicationType();
 
     @Override
-    public GifExtensionType getExtensionType() {
+    public final GifExtensionType getExtensionType() {
         return GifExtensionType.Application;
     }
 }

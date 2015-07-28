@@ -32,4 +32,6 @@ public class GifDrawable extends AnimationDrawable {
     public Gif getGif() {
         return gif;
     }
+
+
 }

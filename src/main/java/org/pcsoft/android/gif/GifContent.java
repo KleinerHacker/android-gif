@@ -8,6 +8,7 @@ import java.util.List;
  */
 final class GifContent {
     private final List<GifFrame> frameList = new ArrayList<GifFrame>();
+    private int loopCount = 0;
 
     /**
      * Returns all GIF frames
@@ -15,5 +16,13 @@ final class GifContent {
      */
     public List<GifFrame> getFrameList() {
         return frameList;
+    }
+
+    public int getLoopCount() {
+        return loopCount;
+    }
+
+    public void setLoopCount(int loopCount) {
+        this.loopCount = loopCount;
     }
 }

@@ -23,8 +23,7 @@ final class GifDecoder {
         final GifHeader header = readHeader(in);
         final GifContent content = readContent(header, in);
 
-        //TODO: Loop from Application Extension
-        final Gif gif = new Gif(header.getWidth(), header.getHeight(), 0, header.getPixelAspectRatio(), header.getColorTable());
+        final Gif gif = new Gif(header.getWidth(), header.getHeight(), content.getLoopCount(), header.getPixelAspectRatio(), header.getColorTable());
         gif.getFrameList().addAll(content.getFrameList());
 
         return gif;
@@ -90,6 +89,9 @@ final class GifDecoder {
                     final GifExtension extension = readExtension(in);
                     if (extension != null) {
                         extensionMap.put(extension);
+                        if (extension instanceof GifApplicationNetscape20Extension) {
+                            content.setLoopCount(((GifApplicationNetscape20Extension) extension).getLoopCount());
+                        }
                     }
                     break;
                 case Terminator:
@@ -162,7 +164,6 @@ final class GifDecoder {
                     // fill last image rect area with background color
                     int c = 0;
                     if (!extensionMap.isTransparency()) {
-                        //TODO: Transparency for background color
                         c = header.getBackgroundColor();
                     }
                     for (int i = 0; i < lastFrame.getMetadata().getHeight(); i++) {
@@ -349,22 +350,25 @@ final class GifDecoder {
     }
 
     private static GifApplicationExtension readApplicationExtension(DataInput in) throws IOException {
-        final GifApplicationExtension extension = new GifApplicationExtension();
+        final GifApplicationExtension extension;
 
         final byte[] appBlockBytes = readBlock(in);
         final String appName = new String(appBlockBytes, 0, 11, "ASCII");
         final GifApplicationType applicationType = GifApplicationType.fromName(appName);
         switch (applicationType) {
-            case Netscape_2_0: {
+            case Netscape20: {
+                extension = new GifApplicationNetscape20Extension();
                 byte[] blockBytes;
                 while ((blockBytes = readBlock(in)).length > 0) {
                     final DataInputStream blockIn = new DataInputStream(new ByteArrayInputStream(blockBytes));
                     try {
                         final int extensionCode = blockIn.readUnsignedByte();
-                        switch (extensionCode) {
-                            case 1:
-                                extension.setLoopCount(blockIn.readShort());
+                        final Netscape20Value value = Netscape20Value.fromCode((byte) extensionCode);
+                        switch (value) {
+                            case LoopCount:
+                                ((GifApplicationNetscape20Extension)extension).setLoopCount(blockIn.readShort());
                                 break;
+                            case Other:
                             default:
                                 continue;
                         }
