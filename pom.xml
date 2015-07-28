@@ -6,7 +6,7 @@
     <description>Library to add GIF support for Android</description>
     <groupId>com.github.kleinerhacker</groupId>
     <artifactId>android-gif-library</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <developers>
         <developer>
             <name>KleinerHacker</name>
