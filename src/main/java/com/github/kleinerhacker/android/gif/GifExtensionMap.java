@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 import java.util.HashMap;
 import java.util.Map;

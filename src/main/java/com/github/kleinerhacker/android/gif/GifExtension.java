@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 /**
  * Basic extensions class. Only for internal use

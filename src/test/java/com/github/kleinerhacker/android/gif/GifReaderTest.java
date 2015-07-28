@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 import org.junit.Assert;
 import org.junit.Test;

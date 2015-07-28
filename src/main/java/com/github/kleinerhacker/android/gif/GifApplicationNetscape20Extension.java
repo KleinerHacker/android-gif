@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 /**
  * Represent a Netscape 2.0 application extension in GIF standard

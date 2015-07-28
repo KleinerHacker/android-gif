@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 /**
  * Represent a GIF color table with up to 256 color values

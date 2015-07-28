@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 /**
  * Represent the GIF metadata for each single GIF frame, see {@link GifFrame}

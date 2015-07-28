@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 /**
  * Transparent color table, based on {@link GifColorTable}. Only for internal use.

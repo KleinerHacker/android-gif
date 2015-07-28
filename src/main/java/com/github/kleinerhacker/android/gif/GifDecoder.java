@@ -1,4 +1,4 @@
-package org.pcsoft.android.gif;
+package com.github.kleinerhacker.android.gif;
 
 import android.graphics.Bitmap;
 import com.google.common.io.LittleEndianDataInputStream;
