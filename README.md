@@ -13,26 +13,18 @@ final Gif myGif = GifFactory.decodeByteArray(gifBytes, 0, gifBytes.length);
 
 ### Show a GIF file on drawable
 
-<pre><code>
-final Gif myGif = GifFactory.decodeResource(context.getResources(), R.raw.my_gif);
-final Drawable myDrawable = new GifDrawable(context.getResources(), myGif);
-</code></pre>
+<pre><code>final Gif myGif = GifFactory.decodeResource(context.getResources(), R.raw.my_gif);
+final Drawable myDrawable = new GifDrawable(context.getResources(), myGif);</code></pre>
 
 ### Scale a loaded GIF
 
-<pre><code>
-final Gif myGif = GifFactory.decodeStream(gifInputStream);
-final Gif myScaledGif = Gif.createScaledGif(myGif, 200, 150, true);
-</code>
-</pre>
+<pre><code>final Gif myGif = GifFactory.decodeStream(gifInputStream);
+final Gif myScaledGif = Gif.createScaledGif(myGif, 200, 150, true);</code></pre>
 
 ### Show single image of GIF
 
-<pre><code>
-final Gif myGif = GifFactory.decodeFile("test.gif");
-final Drawable myDrawable = new BitmapDrawable(context.getResources(), myGif.getFrames()[0].getImage());
-</code>
-</pre>
+<pre><code>final Gif myGif = GifFactory.decodeFile("test.gif");
+final Drawable myDrawable = new BitmapDrawable(context.getResources(), myGif.getFrames()[0].getImage());</code></pre>
 
 ***
 
