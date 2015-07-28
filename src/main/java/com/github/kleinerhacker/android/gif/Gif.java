@@ -12,7 +12,7 @@ public final class Gif {
     /**
      * Endless loop constant
      */
-    public static final int LOOP_ENDLESS = -1;
+    public static final int LOOP_ENDLESS = 0;
 
     /**
      * Scale the given source gif to the given bounds and use an optional filter
