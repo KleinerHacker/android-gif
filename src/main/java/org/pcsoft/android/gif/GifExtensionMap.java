@@ -39,8 +39,13 @@ final class GifExtensionMap {
     }
 
     public int getLoopCount() {
-        return extensionMap.containsKey(GifExtensionType.Application) ?
-                ((GifApplicationExtension)extensionMap.get(GifExtensionType.Application)).getLoopCount() : -1;
+        if (extensionMap.containsKey(GifExtensionType.Application)) {
+            if (((GifApplicationExtension)extensionMap.get(GifExtensionType.Application)).getApplicationType() == GifApplicationType.Netscape20) {
+                return ((GifApplicationNetscape20Extension)extensionMap.get(GifExtensionType.Application)).getLoopCount();
+            }
+        }
+
+        return -1;
     }
 
 }
