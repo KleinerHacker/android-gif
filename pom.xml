@@ -97,23 +97,16 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jarsigner-plugin</artifactId>
-                        <version>1.4</version>
+                        <artifactId>maven-gpg-plugin</artifactId>
                         <executions>
                             <execution>
                                 <id>sign</id>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
+                                <phase>verify</phase>
                                 <configuration>
-                                    <alias>android-gif</alias>
-                                    <keystore>${env.USERPROFILE}/.keystore</keystore>
-                                    <storepass>{j0zoixC5NugHYBrAA40WL2Hpn/5pSh/D+0ylE0roOoE=}</storepass>
-                                    <keypass>{j0zoixC5NugHYBrAA40WL2Hpn/5pSh/D+0ylE0roOoE=}</keypass>
-                                    <archiveDirectory>${project.build.directory}</archiveDirectory>
-                                    <includes>
-                                        <include>*.jar</include>
-                                    </includes>
+                                    <executable>gpg2.exe</executable>
                                 </configuration>
                             </execution>
                         </executions>
