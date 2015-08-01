@@ -90,6 +90,7 @@
             <activation>
                 <property>
                     <name>signer</name>
+                    <value>true</value>
                 </property>
             </activation>
             <build>
