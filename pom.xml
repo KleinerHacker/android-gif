@@ -7,7 +7,7 @@
     <url>https://github.com/KleinerHacker/android-gif</url>
     <groupId>com.github.kleinerhacker</groupId>
     <artifactId>android-gif-library</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <developers>
         <developer>
             <name>KleinerHacker</name>
