@@ -110,6 +110,10 @@
                                     <keystore>${env.USERPROFILE}/.keystore</keystore>
                                     <storepass>{j0zoixC5NugHYBrAA40WL2Hpn/5pSh/D+0ylE0roOoE=}</storepass>
                                     <keypass>{j0zoixC5NugHYBrAA40WL2Hpn/5pSh/D+0ylE0roOoE=}</keypass>
+                                    <archiveDirectory>${project.build.directory}</archiveDirectory>
+                                    <includes>
+                                        <include>*.jar</include>
+                                    </includes>
                                 </configuration>
                             </execution>
                         </executions>
