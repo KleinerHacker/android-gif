@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <name>Android GIF Library</name>
     <description>Library to add GIF support for Android</description>
+    <url>https://github.com/KleinerHacker/android-gif</url>
     <groupId>com.github.kleinerhacker</groupId>
     <artifactId>android-gif-library</artifactId>
     <version>1.0.1-SNAPSHOT</version>
@@ -82,6 +83,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>signer</id>
+            <activation>
+                <property>
+                    <name>signer</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jarsigner-plugin</artifactId>
+                        <version>1.4</version>
+                        <executions>
+                            <execution>
+                                <id>sign</id>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <alias>android-gif</alias>
+                                    <keystore>${env.USERPROFILE}/.keystore</keystore>
+                                    <storepass>{j0zoixC5NugHYBrAA40WL2Hpn/5pSh/D+0ylE0roOoE=}</storepass>
+                                    <keypass>{j0zoixC5NugHYBrAA40WL2Hpn/5pSh/D+0ylE0roOoE=}</keypass>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
