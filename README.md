@@ -28,6 +28,19 @@ final Drawable myDrawable = new BitmapDrawable(context.getResources(), myGif.get
 
 ***
 
+## Maven Usage
+
+To use the android-gif-library in your application add this to your pom.xml in dependencies part:
+<pre><code><dependency>
+  <groupId>com.github.kleinerhacker</groupId>
+  <artifactId>android-gif</artifactId>
+  <version>1.0.0</version>
+</dependency></code></pre>
+
+Alternative you can download the artifact and put it manuelly to your project.
+
+***
+
 ## Known Bugs
 
 * Loop Count faulty: Only one loop or endless loop supported
