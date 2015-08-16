@@ -105,9 +105,6 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <phase>verify</phase>
-                                <configuration>
-                                    <executable>gpg2.exe</executable>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
